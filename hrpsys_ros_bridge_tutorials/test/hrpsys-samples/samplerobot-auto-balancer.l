@@ -119,6 +119,7 @@
 
 (defun samplerobot-auto-balancer-demo7 ()
   (print "1. goPos")
+  (send *ri* :start-auto-balancer)
   (send *ri* :go-pos 0.1 0.05 20)
   (print "  goPos()=>OK")
   t)
