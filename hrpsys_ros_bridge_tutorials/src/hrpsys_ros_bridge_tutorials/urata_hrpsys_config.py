@@ -195,7 +195,7 @@ class URATAHrpsysConfigurator(HrpsysConfigurator):
         #astp.st_algorithm=OpenHRP.AutoBalancerService.EEFM
         # astp.st_algorithm=OpenHRP.AutoBalancerService.EEFMQP
         astp.st_algorithm=OpenHRP.AutoBalancerService.EEFMQPCOP
-        astp.emergency_check_mode=OpenHRP.AutoBalancerService.CP # enable EmergencyStopper for JAXON @ 2015/11/19
+        # astp.emergency_check_mode=OpenHRP.AutoBalancerService.CP # enable EmergencyStopper for JAXON @ 2015/11/19
         astp.cp_check_margin=[0.05, 0.045, 0, 0.095]
         astp.k_brot_p=[0, 0]
         astp.k_brot_tc=[1000, 1000]
@@ -237,8 +237,8 @@ class URATAHrpsysConfigurator(HrpsysConfigurator):
         astp.eefm_swing_damping_moment_thre=[15]*3
         astp.eefm_use_swing_damping=True
         # astp.eefm_ee_error_cutoff_freq=10000 # not used
-        astp.eefm_swing_rot_spring_gain=[[5.0, 5.0, 5.0], [5.0, 5.0, 5.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
-        astp.eefm_swing_pos_spring_gain=[[5.0, 5.0, 5.0], [5.0, 5.0, 5.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+        astp.eefm_swing_rot_spring_gain=[[5.0, 5.0, 5.0], [5.0, 5.0, 5.0], [10.0, 10.0, 10.0], [10.0, 10.0, 10.0]]
+        astp.eefm_swing_pos_spring_gain=[[5.0, 5.0, 5.0], [5.0, 5.0, 5.0], [10.0, 10.0, 10.0], [10.0, 10.0, 10.0]]
         astp.eefm_swing_rot_time_const=[[1.0, 1.0, 1.0]]*4
         astp.eefm_swing_pos_time_const=[[1.0, 1.0, 1.0]]*4
         astp.eefm_ee_moment_limit = [[90.0,90.0,1e4], [90.0,90.0,1e4], [1e4]*3, [1e4]*3]
