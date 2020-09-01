@@ -195,7 +195,7 @@ class URATAHrpsysConfigurator(HrpsysConfigurator):
         #astp.st_algorithm=OpenHRP.AutoBalancerService.EEFM
         # astp.st_algorithm=OpenHRP.AutoBalancerService.EEFMQP
         astp.st_algorithm=OpenHRP.AutoBalancerService.EEFMQPCOP
-        astp.emergency_check_mode=OpenHRP.AutoBalancerService.CP # enable EmergencyStopper for JAXON @ 2015/11/19
+        #astp.emergency_check_mode=OpenHRP.AutoBalancerService.CP # enable EmergencyStopper for JAXON @ 2015/11/19
         astp.cp_check_margin=[0.05, 0.045, 0, 0.095]
         astp.k_brot_p=[0, 0]
         astp.k_brot_tc=[1000, 1000]
