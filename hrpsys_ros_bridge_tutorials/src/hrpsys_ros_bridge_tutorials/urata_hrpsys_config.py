@@ -61,9 +61,9 @@ class URATAHrpsysConfigurator(HrpsysConfigurator):
     def setStAbcParameters (self):
         if self.ROBOT_NAME == "STARO":
             self.setStAbcParametersSTARO()
-        elif self.ROBOT_NAME == "JAXON":
-            self.setStAbcIcParametersJAXON(foot="LEPTRINO")
         elif self.ROBOT_NAME == "JAXON_RED":
+            self.setStAbcIcParametersJAXON(foot="LEPTRINO")
+        elif self.ROBOT_NAME == "JAXON":
             self.setStAbcIcParametersJAXON(foot="KAWADA")
         elif self.ROBOT_NAME == "JAXON_BLUE":
             self.setStAbcIcParametersJAXON_BLUE()
@@ -179,9 +179,9 @@ class URATAHrpsysConfigurator(HrpsysConfigurator):
         abcp=self.abc_svc.getAutoBalancerParam()[1]
         #abcp.default_zmp_offsets=[[0.015, 0.0, 0.0], [0.015, 0.0, 0.0], [0, 0, 0], [0, 0, 0]];
         abcp.default_zmp_offsets=[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0, 0, 0], [0, 0, 0]];
-        if self.ROBOT_NAME == "JAXON":
+        if self.ROBOT_NAME == "JAXON_RED":
             abcp.default_zmp_offsets=[[0.0, 0.02, 0.0], [0.0, -0.02, 0.0], [0, 0, 0], [0, 0, 0]];
-        elif self.ROBOT_NAME == "JAXON_RED":
+        elif self.ROBOT_NAME == "JAXON":
             abcp.default_zmp_offsets=[[0.0, 0.02, 0.0], [0.0, -0.02, 0.0], [0, 0, 0], [0, 0, 0]];
         abcp.move_base_gain=1.0
         abcp.ik_mode = OpenHRP.AutoBalancerService.FULLBODY
@@ -202,14 +202,14 @@ class URATAHrpsysConfigurator(HrpsysConfigurator):
         #astp.eefm_body_attitude_control_gain=[0, 0.5]
         astp.eefm_body_attitude_control_gain=[0.5, 0.5]
         astp.eefm_body_attitude_control_time_const=[1000, 1000]
-        if self.ROBOT_NAME == "JAXON":
+        if self.ROBOT_NAME == "JAXON_RED":
             astp.eefm_rot_damping_gain = [[20*1.6*1.1*1.5*1.2*1.65*1.1, 20*1.6*1.1*1.5*1.2*1.65*1.1, 1e5]]*4
             astp.eefm_pos_damping_gain = [[3500*1.6*6, 3500*1.6*6, 3500*1.6*1.1*1.5*1.2*1.1]]*4
             astp.eefm_swing_rot_damping_gain=[20*1.6*1.1*1.5*1.2, 20*1.6*1.1*1.5*1.2, 1e5]
             astp.eefm_swing_pos_damping_gain=[3500*1.6*6, 3500*1.6*6, 3500*1.6*1.4]
             astp.eefm_rot_compensation_limit = [math.radians(30), math.radians(30), math.radians(10), math.radians(10)]
             astp.eefm_pos_compensation_limit = [0.06, 0.06, 0.050, 0.050]
-        elif self.ROBOT_NAME == "JAXON_RED":
+        elif self.ROBOT_NAME == "JAXON":
             astp.eefm_rot_damping_gain = [[20*1.6*1.1*1.5, 20*1.6*1.1*1.5, 1e5],
                                          [20*1.6*1.1*1.5, 20*1.6*1.1*1.5, 1e5],
                                          [20*1.6*1.1*1.5*1.2, 20*1.6*1.1*1.5*1.2, 1e5],
