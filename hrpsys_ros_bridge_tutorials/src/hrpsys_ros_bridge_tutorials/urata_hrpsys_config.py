@@ -190,7 +190,7 @@ class URATAHrpsysConfigurator(HrpsysConfigurator):
         # kf setting
         kfp=self.kf_svc.getKalmanFilterParam()[1]
         kfp.R_angle=1000
-	kfp.sensorRPY_offset = [-0.0137, 0.016, 0.0]#-0.0137, 0.017, 0
+        kfp.sensorRPY_offset = [-0.0137, 0.016, 0.0]#-0.0137, 0.017, 0
         self.kf_svc.setKalmanFilterParam(kfp)
         # AutoSt setting
         astp=self.abc_svc.getStabilizerParam()
@@ -212,8 +212,8 @@ class URATAHrpsysConfigurator(HrpsysConfigurator):
             astp.eefm_rot_compensation_limit = [math.radians(30), math.radians(30), math.radians(10), math.radians(10)]
             astp.eefm_pos_compensation_limit = [0.06, 0.06, 0.050, 0.050]
         elif self.ROBOT_NAME == "JAXON_RED":
-            astp.eefm_rot_damping_gain = [[120, 120, 1e5],
-                                         [120, 120, 1e5],
+            astp.eefm_rot_damping_gain = [[200, 200, 1e5],#120
+                                         [200, 200, 1e5],
                                          [20*1.6*1.1*1.5*1.2, 20*1.6*1.1*1.5*1.2, 1e5],
                                          [20*1.6*1.1*1.5*1.2, 20*1.6*1.1*1.5*1.2, 1e5]]
             astp.eefm_pos_damping_gain = [[3500*1.6*6, 3500*1.6*6, 10000],
